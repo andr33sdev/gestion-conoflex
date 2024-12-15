@@ -30,7 +30,7 @@ const MateriaPrima = () => {
         </div>
       </header>
 
-      {/* MATERIA PRIMA TABLE */}
+      {/* MATERIAS PRIMAS TABLE */}
       <div className="materia-prima-table">
         <table>
           <thead>
