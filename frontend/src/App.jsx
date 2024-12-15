@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
 import "./App.css";
 
-import MateriaPrima from "./pages/MateriaPrima";
-import NuevaMateriaPrima from "./pages/NuevaMateriaPrima";
+import MateriaPrima from "./pages/MateriaPrima/MateriaPrima";
+import NuevaMateriaPrima from "./pages/MateriaPrima/NuevaMateriaPrima";
 import Sidebar from "./components/Sidebar";
 
 function App() {

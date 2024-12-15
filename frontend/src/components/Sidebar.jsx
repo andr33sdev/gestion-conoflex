@@ -1,8 +1,11 @@
-import React from 'react'
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom'; // Importamos `useLocation` para obtener la ruta activa
 import logo from "../../assets/logo.png";
 import "./Sidebar.css";
 
 const Sidebar = () => {
+    const location = useLocation(); // Obtenemos la ruta actual con `useLocation`
+
     return (
         <div className="sidebar">
             <div className="brand">
@@ -10,35 +13,35 @@ const Sidebar = () => {
             </div>
             <nav>
                 <ul>
-                    <li className="active">
-                        <a className="link" href="/dashboard">
+                    <li className={location.pathname === '/dashboard' ? 'active' : ''}>
+                        <Link className="link" to="/dashboard"> {/* Usamos `Link` de React Router */}
                             <span className="icon">📊</span> Dashboard
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a className="link" href="/materia-prima">
+                    <li className={location.pathname === '/materia-prima' ? 'active' : ''}>
+                        <Link className="link" to="/materia-prima"> {/* Usamos `Link` de React Router */}
                             <span className="icon">🪣</span> Materia Prima
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a className="link" href="/matrices">
+                    <li className={location.pathname === '/matrices' ? 'active' : ''}>
+                        <Link className="link" to="/matrices"> {/* Usamos `Link` de React Router */}
                             <span className="icon">⛓️</span> Matrices
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a className="link" href="/dashboard">
+                    <li className={location.pathname === '/store' ? 'active' : ''}>
+                        <Link className="link" to="/store"> {/* Usamos `Link` de React Router */}
                             <span className="icon">🏪</span> Store
-                        </a>
+                        </Link>
                     </li>
-                    <li>
-                        <a className="link" href="/dashboard">
+                    <li className={location.pathname === '/visitor' ? 'active' : ''}>
+                        <Link className="link" to="/visitor"> {/* Usamos `Link` de React Router */}
                             <span className="icon">👥</span> Visitor
-                        </a>
+                        </Link>
                     </li>
                 </ul>
             </nav>
         </div>
-    )
+    );
 }
 
-export default Sidebar
+export default Sidebar;

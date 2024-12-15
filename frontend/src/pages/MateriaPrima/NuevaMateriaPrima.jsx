@@ -1,16 +1,21 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import axios from "axios";
 import "./MateriaPrima.css";
 
 const NuevaMateriaPrima = () => {
 
-    const [data, setData] = useState({ code: "", stock: 0, min_stock: 0 });
+    const [data, setData] = useState({ code: "", stock: 0, min_stock: 0 })
 
     const handleChange = (event) => {
         setData({ ...data, [event.target.name]: event.target.value })
     }
 
-    const handleSubmit = () => {
-        console.log("materia prima creada", data)
+    const handleSubmit = async () => {
+        try {
+            const response = await axios.post("http://localhost:3000/api/materia-prima", data)
+        } catch (error) {
+            console.error(error)
+        }
     }
 
     return (

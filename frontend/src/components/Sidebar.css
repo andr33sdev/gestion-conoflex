@@ -31,7 +31,7 @@
   }
   
   .sidebar nav li a {
-    color: var(--text-secondary);
+    color: white;
   }
   
   .sidebar nav li.active {

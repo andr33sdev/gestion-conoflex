@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import moment from "moment-timezone"
 
 import "./MateriaPrima.css";
 
@@ -11,6 +12,7 @@ const MateriaPrima = () => {
       const response = await axios.get(
         "http://localhost:3000/api/materia-prima"
       );
+      console.log(response.data)
       setMateriasPrimas(response.data);
     } catch (error) {
       console.error("Error fetching materias primas", error);
@@ -40,7 +42,7 @@ const MateriaPrima = () => {
               <th>Código</th>
               <th>Stock</th>
               <th>Stock mínimo</th>
-              <th>Fecha actualización</th>
+              <th>Última modificación</th>
             </tr>
           </thead>
           <tbody>
@@ -49,7 +51,14 @@ const MateriaPrima = () => {
                 <td>{materiaPrima.code}</td>
                 <td>{materiaPrima.stock}</td>
                 <td>{materiaPrima.min_stock}</td>
-                <td>{materiaPrima.updated}</td>
+                <td>
+                  {/* Verifica si updatedAt es válido y luego aplica el formato */}
+                  {materiaPrima.updatedAt
+                    ? moment(materiaPrima.updatedAt)
+                      .tz("America/Argentina/Buenos_Aires")
+                      .format("DD/MM/YYYY HH:mm:ss")
+                    : "Sin datos"} {/* Si no hay fecha, muestra "Sin datos" */}
+                </td>
               </tr>
             ))}
           </tbody>
