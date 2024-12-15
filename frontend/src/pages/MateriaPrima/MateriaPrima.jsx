@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
+import "./MateriaPrima.css";
+
 const MateriaPrima = () => {
   const [materiasPrimas, setMateriasPrimas] = useState([]);
 
@@ -26,7 +28,7 @@ const MateriaPrima = () => {
         <h1>Materia Prima</h1>
         <div className="header-right">
           <input type="search" placeholder="Type here to start searching..." />
-          <button className="share-btn">Share</button>
+          <a href="/nueva-materia-prima" className="add-mp-btn">Agregar nueva 🟢</a>
         </div>
       </header>
 

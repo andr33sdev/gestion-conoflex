@@ -26,51 +26,6 @@ body {
   min-height: 100vh;
 }
 
-/* Sidebar Styles */
-.sidebar {
-  width: 250px;
-  background-color: var(--bg-darker);
-  padding: 1.5rem;
-  border-right: 1px solid #333;
-}
-
-.logo {
-  width: 30px;
-  height: 30px;
-  border-radius: 8px;
-}
-
-.brand {
-  margin: 2rem 0;
-}
-
-.sidebar nav ul {
-  list-style: none;
-}
-
-.sidebar nav li {
-  padding: 0.75rem 1rem;
-  margin: 0.5rem 0;
-  border-radius: 8px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.sidebar nav li a {
-  color: var(--text-secondary);
-}
-
-.sidebar nav li.active {
-  background-color: var(--purple);
-  color: white;
-}
-
-.icon {
-  margin-right: 0.5rem;
-}
-
 /* Main Content Styles */
 .main-content {
   flex: 1;
@@ -104,37 +59,3 @@ input[type="search"] {
   width: 300px;
 }
 
-.share-btn {
-  padding: 0.5rem 1rem;
-  background-color: var(--purple);
-  border: none;
-  border-radius: 8px;
-  color: white;
-  cursor: pointer;
-}
-
-/* Materia Prima Table */
-.materia-prima-table {
-  background-color: var(--card-bg);
-  border-radius: 12px;
-  padding: 1.5rem;
-}
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 1rem;
-}
-
-th {
-  text-align: left;
-  padding: 1rem;
-  color: var(--text-secondary);
-  font-weight: normal;
-  border-bottom: 1px solid #333;
-}
-
-td {
-  padding: 1rem;
-  border-bottom: 1px solid #333;
-}

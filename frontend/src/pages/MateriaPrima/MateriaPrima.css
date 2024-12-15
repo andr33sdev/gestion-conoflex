@@ -1,0 +1,96 @@
+.main-content {
+    flex: 1;
+    padding: 3rem;
+    width: 75vw;
+}
+
+/* Materia Prima Table */
+.materia-prima-table {
+    background-color: var(--card-bg);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+th {
+    text-align: left;
+    padding: 1rem;
+    color: var(--text-secondary);
+    font-weight: normal;
+    border-bottom: 1px solid #333;
+}
+
+td {
+    padding: 1rem;
+    border-bottom: 1px solid #333;
+}
+
+.add-mp-btn {
+    padding: 0.5rem 1rem;
+    background-color: var(--purple);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.add-mp-btn:hover {
+    transition-duration: 0.3s;
+    color: var(--purple);
+    background-color: white;
+}
+
+/* Nueva Materia Prima Form */
+.new-mp-title {
+    font-size: 2rem;
+}
+
+.new-mp-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+}
+
+.new-mp-form label {
+    margin-top: 50px;
+    font-size: 1.5rem;
+}
+
+.new-mp-form input {
+    margin-top: 10px;
+    background-color: var(--bg-dark);
+    color: white;
+    /*border-radius: 8px;*/
+    padding: 5px;
+    font-weight: 700;
+    font-size: 1rem;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--purple)
+}
+
+.new-mp-form input:focus {
+    border: none;
+    border-bottom: 3px solid var(--purple)
+}
+
+.add-mp-btn-form {
+    margin-top: 50px;
+    padding: 0.5rem 1rem;
+    background-color: var(--purple);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+}
+
+.add-mp-btn-form:hover {
+    transition: 0.3s;
+    background-color: white;
+    color: var(--purple);
+}
