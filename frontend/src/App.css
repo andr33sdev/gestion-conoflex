@@ -18,12 +18,11 @@
 body {
   background-color: var(--bg-dark);
   color: var(--text-primary);
-  min-height: 100vh;
 }
 
 .container {
   display: flex;
-  min-height: 100vh;
+  height: 100vh;
 }
 
 /* Main Content Styles */

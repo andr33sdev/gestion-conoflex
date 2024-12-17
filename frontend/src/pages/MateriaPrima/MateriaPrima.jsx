@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import moment from "moment-timezone"
+import moment from "moment-timezone";
 
 import "./MateriaPrima.css";
 
 const MateriaPrima = () => {
   const [materiasPrimas, setMateriasPrimas] = useState([]);
 
+  const navigate = useNavigate();
+
+  const handleRowClick = (id) => {
+    navigate(`/materia-prima/${id}`);
+  };
+
   const fetchMateriaPrima = async () => {
     try {
       const response = await axios.get(
         "http://localhost:3000/api/materia-prima"
       );
-      console.log(response.data)
       setMateriasPrimas(response.data);
     } catch (error) {
       console.error("Error fetching materias primas", error);
@@ -21,7 +27,6 @@ const MateriaPrima = () => {
 
   useEffect(() => {
     fetchMateriaPrima();
-    console.log(materiasPrimas)
   }, []);
 
   return (
@@ -30,7 +35,9 @@ const MateriaPrima = () => {
         <h1>Materia Prima</h1>
         <div className="header-right">
           <input type="search" placeholder="Type here to start searching..." />
-          <a href="/nueva-materia-prima" className="add-mp-btn">Agregar nueva 🟢</a>
+          <a href="/nueva-materia-prima" className="add-mp-btn">
+            Agregar nueva 🟢
+          </a>
         </div>
       </header>
 
@@ -47,7 +54,11 @@ const MateriaPrima = () => {
           </thead>
           <tbody>
             {materiasPrimas.map((materiaPrima) => (
-              <tr key={materiaPrima._id}>
+              <tr
+                key={materiaPrima._id}
+                onClick={() => handleRowClick(materiaPrima._id)}
+                className="materia-prima-row"
+              >
                 <td>{materiaPrima.code}</td>
                 <td>{materiaPrima.stock}</td>
                 <td>{materiaPrima.min_stock}</td>
@@ -55,9 +66,10 @@ const MateriaPrima = () => {
                   {/* Verifica si updatedAt es válido y luego aplica el formato */}
                   {materiaPrima.updatedAt
                     ? moment(materiaPrima.updatedAt)
-                      .tz("America/Argentina/Buenos_Aires")
-                      .format("DD/MM/YYYY HH:mm:ss")
-                    : "Sin datos"} {/* Si no hay fecha, muestra "Sin datos" */}
+                        .tz("America/Argentina/Buenos_Aires")
+                        .format("DD/MM/YYYY HH:mm:ss")
+                    : "Sin datos"}{" "}
+                  {/* Si no hay fecha, muestra "Sin datos" */}
                 </td>
               </tr>
             ))}

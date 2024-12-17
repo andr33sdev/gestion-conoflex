@@ -10,6 +10,20 @@ exports.getAllMateriasPrimas = async (req, res) => {
   }
 };
 
+// Obtener una materia prima por ID
+exports.getMateriaPrimaById = async (req, res) => {
+  try {
+    const materiaPrima = await MateriaPrima.findById(req.params._id);
+    if (materiaPrima) {
+      res.status(200).json(materiaPrima);
+    } else {
+      res.status(404).json({ message: "Materia prima no encontrada" });
+    }
+  } catch (err) {
+    res.status(500).json({ message: err.message });
+  }
+};
+
 // Crear una nueva materia prima
 exports.createMateriaPrima = async (req, res) => {
   try {
