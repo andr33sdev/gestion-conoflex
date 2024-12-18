@@ -6,46 +6,36 @@ const Sidebar = () => {
   const location = useLocation(); // Obtenemos la ruta actual con `useLocation`
 
   return (
-    <div className="flex flex-col my-auto ml-3 p-5 bg-zinc-800 rounded-xl" style={{height:"95vh", width:"20vw"}}>
-      <div>
+    <div className="flex flex-col my-auto ml-5 p-5 bg-zinc-800 rounded-xl" style={{ height: "95vh", width: "20vw" }}>
+      <div className="ml-8">
         <img src={logo} alt="logo flexcore" className="w-64 mt-3" />
       </div>
-      <nav className="mt-8 text-white">
+      <nav className="mt-12 ml-8 text-white">
         <ul className="space-y-5">
-          <li className={location.pathname === "/dashboard" ? "active" : ""}>
+          <li className={location.pathname === "/dashboard" ? "bg-purple-400 rounded-lg w-48 font-bold p-3" : "p-3"}>
             <Link className="link" to="/dashboard">
-              {" "}
-              {/* Usamos `Link` de React Router */}
               <span className="mr-3">📊</span> Dashboard
             </Link>
           </li>
           <li
-            className={location.pathname === "/materia-prima" ? "active" : ""}
+            className={location.pathname === "/materia-prima" ? "bg-purple-400 rounded-lg w-48 font-bold p-3" : "p-3"}
           >
             <Link className="link" to="/materia-prima">
-              {" "}
-              {/* Usamos `Link` de React Router */}
               <span className="mr-3">🪣</span> Materia Prima
             </Link>
           </li>
-          <li className={location.pathname === "/matrices" ? "active" : ""}>
+          <li className={location.pathname === "/matrices" ? "bg-purple-400 rounded-lg w-48 font-bold p-3" : "p-3"}>
             <Link className="link" to="/matrices">
-              {" "}
-              {/* Usamos `Link` de React Router */}
               <span className="mr-3">⛓️</span> Matrices
             </Link>
           </li>
-          <li className={location.pathname === "/store" ? "active" : ""}>
+          <li className={location.pathname === "/store" ? "bg-purple-400 rounded-lg w-48 font-bold p-3" : "p-3"}>
             <Link className="link" to="/store">
-              {" "}
-              {/* Usamos `Link` de React Router */}
               <span className="mr-3">🏪</span> Store
             </Link>
           </li>
-          <li className={location.pathname === "/visitor" ? "active" : ""}>
+          <li className={location.pathname === "/visitor" ? "bg-purple-400 rounded-lg w-48 font-bold p-3" : "p-3"}>
             <Link className="link" to="/visitor">
-              {" "}
-              {/* Usamos `Link` de React Router */}
               <span className="mr-3">👥</span> Visitor
             </Link>
           </li>

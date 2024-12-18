@@ -34,7 +34,7 @@
     color: white;
   }
   
-  .sidebar nav li.active {
+  .active {
     background-color: var(--purple);
     color: white;
   }

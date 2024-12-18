@@ -28,7 +28,7 @@ const MateriaPrima = () => {
   }, []);
 
   return (
-    <div className="flex flex-col w-full mt-8 px-20 h-screen">
+    <div className="flex flex-col w-full pt-8 px-20 h-screen">
       {" "}
       {/* Asegura que el contenedor principal ocupe toda la altura de la pantalla */}
       <header className="flex flex-row justify-between mb-4">
