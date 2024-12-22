@@ -30,10 +30,8 @@ const MateriaPrima = () => {
 
   return (
     <div className="flex flex-col w-full pt-8 px-20 h-screen">
-      {" "}
       {/* Asegura que el contenedor principal ocupe toda la altura de la pantalla */}
       <header className="flex flex-row justify-between mb-4">
-        {" "}
         {/* Agregado margen inferior para separar del contenido */}
         <h1 className="text-3xl text-white">Materia Prima</h1>
         <div className="bg-purple-400 rounded-lg h-8 w-36 text-center hover:bg-white hover:text-gray-950 hover:cursor-pointer transition-all">
@@ -45,7 +43,6 @@ const MateriaPrima = () => {
         className="overflow-y-auto"
         style={{ maxHeight: "calc(100vh - 150px)" }}
       >
-        {" "}
         {/* Contenedor con scroll solo para la tabla */}
         <table className="table-fixed bg-zinc-800 rounded-lg w-full text-center text-slate-200">
           <thead>
@@ -70,9 +67,9 @@ const MateriaPrima = () => {
                   {/* Verifica si updatedAt es válido y luego aplica el formato */}
                   {materiaPrima.updatedAt
                     ? moment(materiaPrima.updatedAt)
-                        .tz("America/Argentina/Buenos_Aires")
-                        .format("DD/MM/YYYY HH:mm:ss")
-                    : "Sin datos"}{" "}
+                      .tz("America/Argentina/Buenos_Aires")
+                      .format("DD/MM/YYYY HH:mm:ss")
+                    : "Sin datos"}
                   {/* Si no hay fecha, muestra "Sin datos" */}
                 </td>
               </tr>
